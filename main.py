@@ -39,12 +39,13 @@ def sendMessage(number):
     pwk.sendwhatmsg_instantly(number, message, 18, 30)
     print("Message Delivered")
 
-
+# Get the current date
 x = datetime.datetime.now()
 datenow=x.strftime("%d") +"-"+ x.strftime("%m")
 
 today=False
 
+# Check if there is an event today
 for obj in list_events:
 
     if obj.get_date() == datenow :
@@ -52,7 +53,7 @@ for obj in list_events:
         today=True
         break
 
-
+# If there is no event today
 if not today:
     print("No Event Today")
 
